@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>TODO supply a title</title>
+        <script src="./lib/angular/js/angular.js"></script>
+        <script src="./lib/angular/js/angular-locale_es-es.js"></script>
+        <script src="./get.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-controller="GetController">
+         <table border='1'>
+            <tr>
+                <td class='bold'>idEntidadBancaria</td>
+                <td class='bold'>Nombre</td>
+                <td class='bold'>Código Entidad</td>
+                <td class='bold'>Fecha creación</td>
+                <td class='bold'>Dirección</td>
+                <td class='bold'>CIF</td>
+            </tr>
+
+            <tr>
+                <td>{{entidadBancaria.idEntidadBancaria}}</td>
+                <td>{{entidadBancaria.nombre}}  </td>
+                <td>{{entidadBancaria.codigoEntidad}}  </td>
+                <td>{{entidadBancaria.fechaCreacion}}  </td>
+                <td>{{entidadBancaria.direccion}}  </td>
+                <td>{{entidadBancaria.cif}}</td>
+            </tr>
+
+        </table>
+     
+      
+    </body>
+</html>
