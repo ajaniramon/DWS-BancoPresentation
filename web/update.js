@@ -1,7 +1,7 @@
 var app = angular.module("app", []);
-app.controller("InsertController", InsertController);
+app.controller("UpdateController", UpdateController);
 
-function InsertController($scope,$http){
+function UpdateController($scope,$http){
     
     function getParameterByName(name) {
         var regexS = "[\\?&]" + name + "=([^&#]*)",
@@ -14,6 +14,7 @@ function InsertController($scope,$http){
         }
     }
     var entidadBancaria = {
+        idEntidadBancaria: getParameterByName("idEntidadBancaria"),
         nombre: getParameterByName("nombre"),
         codigoEntidad: getParameterByName("codigoEntidad"),
         fechaCreacion: getParameterByName("fechaCreacion"),
@@ -21,12 +22,12 @@ function InsertController($scope,$http){
         cif: getParameterByName("cif")
     }
 $http({
-        method: 'POST',
+        method: 'PUT',
         url: '/banco_api/api/entidadBancaria/',
         data: entidadBancaria
 
     }).success(function (data, status, headers, config) {
-        $scope.mensaje = "INSERTADO CON ÉXITO.";
+        $scope.mensaje = "ACTUALIZADO CON ÉXITO";
     }).error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
         console.log(data);
