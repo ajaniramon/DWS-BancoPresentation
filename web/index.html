@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <script src="./lib/angular/js/angular.js"></script>
         <script src="./lib/angular/js/angular-locale_es-es.js"></script>
+        <script src="./lib/angular/js/angular-route.js"></script>
         <script src="./index.js"></script>
         <style>
             .myButton {
@@ -51,7 +52,13 @@ and open the template in the editor.
 	top:1px;
 }
 
-            
+.visor{
+    margin: 50px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 4px;
+}            
         </style>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -66,15 +73,19 @@ and open the template in the editor.
             </tr>
 
             <tr ng-repeat="entidadBancaria in entidadesBancarias">
-                <td><a href="get.html?idEntidadBancaria={{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
+                <td><a href="#/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
                 <td>{{entidadBancaria.nombre}}  </td>
-                <td> <a href="delete.html?idEntidadBancaria={{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
+                <td> <a href="#/delete/{{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
             </tr>
 
         </table>
         <br>
-        <a href="insertData.html" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a>
-      
+        <a href="#/insert" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a>
+        
+        <div class="visor" ng-view>
+            
+            
+        </div>
       
 
     </body>

@@ -7,7 +7,7 @@
 
 var app = angular.module("app", []);
 app.controller("GetController", GetController);
-function GetController($scope, $http) {
+function GetController($scope, $http, $routeParams) {
 
     function getParameterByName(name) {
         var regexS = "[\\?&]" + name + "=([^&#]*)",
@@ -24,7 +24,7 @@ function GetController($scope, $http) {
 
     $http({
         method: 'GET',
-        url: '/banco_api/api/entidadBancaria/'+getParameterByName("idEntidadBancaria")
+        url: '/banco_api/api/entidadBancaria/'+ $routeParams.idEntidadBancaria
 
     }).success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
