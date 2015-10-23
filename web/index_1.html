@@ -67,24 +67,11 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body ng-controller="IndexController">
+    <body>
         <img src="./img/logo.png" id="logo"/>
-      <table border='1'>
-            <tr>
-                <td class='bold'>idEntidadBancaria</td>
-                <td class='bold'>Nombre</td>
-            </tr>
 
-            <tr ng-repeat="entidadBancaria in entidadesBancarias">
-                <td><a href="#/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
-                <td>{{entidadBancaria.nombre}}  </td>
-                <td> <a href="#/delete/{{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
-            </tr>
+        <a href="#/entidad" class="myButton">ENTIDAD BANCARIA</a>
 
-        </table>
-        <br>
-        <p>  <a href="#/insert" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a> </p>
-        <p> <a href="#/update" class="myButton">QUIERO ACTUALIZAR UNA ENTIDAD BANCARIA</a></p>
         <div class="visor" ng-view>
             
             

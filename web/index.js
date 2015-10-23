@@ -11,30 +11,6 @@ function IndexController($scope, $http) {
     });
 }
 
-app.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/insert', {
-            templateUrl: "insertData.html"
-         //   controller: "InsertController"
-        });
-
-        $routeProvider.when('/get/:idEntidadBancaria', {
-            templateUrl: "get.html",
-            controller: "GetController"
-        });
-
-        $routeProvider.when('/delete/:idEntidadBancaria', {
-            templateUrl: "delete.html",
-            controller: "DeleteController"
-        });
-
-        $routeProvider.when('/update/', {
-            templateUrl: "updateData.html"
-         //   controller: "UpdateController"
-        });
-
-
-    }]);
-
 app.controller("GetController", ["$scope", "$routeParams", "$http", function ($scope, $routeParams, $http) {
 
         $http({
