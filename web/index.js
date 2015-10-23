@@ -1,7 +1,6 @@
-
-var app = angular.module("app", ['ngRoute']);
 app.controller("IndexController", IndexController);
-function IndexController($scope, $http, $log) {
+IndexController.$inject=['$scope','$http'];
+function IndexController($scope, $http) {
     $http({
         method: 'GET',
         url: '/banco_api/api/entidadBancaria'
@@ -10,15 +9,12 @@ function IndexController($scope, $http, $log) {
     }).error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
     });
-
-
-
-
 }
+
 app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/insert', {
-            templateUrl: "insertData.html",
-            controller: "InsertController"
+            templateUrl: "insertData.html"
+         //   controller: "InsertController"
         });
 
         $routeProvider.when('/get/:idEntidadBancaria', {
@@ -32,8 +28,8 @@ app.config(['$routeProvider', function ($routeProvider) {
         });
 
         $routeProvider.when('/update/', {
-            templateUrl: "updateData.html",
-            controller: "UpdateController"
+            templateUrl: "updateData.html"
+         //   controller: "UpdateController"
         });
 
 
