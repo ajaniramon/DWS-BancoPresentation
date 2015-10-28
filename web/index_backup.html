@@ -10,7 +10,7 @@ and open the template in the editor.
         <script src="./lib/angular/js/angular-locale_es-es.js"></script>
         <script src="./lib/angular/js/angular-route.js"></script>
         <script src="./app.js"></script>
-        <script src="./route.js"></script>
+        <script src="./app-route.js"></script>
         <script src="./index.js"></script>
         
         <style>
@@ -67,11 +67,24 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body ng-controller="IndexController">
         <img src="./img/logo.png" id="logo"/>
+      <table border='1'>
+            <tr>
+                <td class='bold'>idEntidadBancaria</td>
+                <td class='bold'>Nombre</td>
+            </tr>
 
-        <a href="#/entidad" class="myButton">ENTIDAD BANCARIA</a>
+            <tr ng-repeat="entidadBancaria in entidadesBancarias">
+                <td><a href="#/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
+                <td>{{entidadBancaria.nombre}}  </td>
+                <td> <a href="#/delete/{{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
+            </tr>
 
+        </table>
+        <br>
+        <p>  <a href="#/insert" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a> </p>
+        <p> <a href="#/update" class="myButton">QUIERO ACTUALIZAR UNA ENTIDAD BANCARIA</a></p>
         <div class="visor" ng-view>
             
             

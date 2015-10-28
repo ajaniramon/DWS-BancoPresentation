@@ -6,85 +6,23 @@ and open the template in the editor.
 -->
 <html ng-app="app" ng-strict-di>
     <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./lib/angular/js/angular.js"></script>
         <script src="./lib/angular/js/angular-locale_es-es.js"></script>
         <script src="./lib/angular/js/angular-route.js"></script>
         <script src="./app.js"></script>
-        <script src="./route.js"></script>
+        <script src="./app-route.js"></script>
         <script src="./index.js"></script>
+        <link rel="stylesheet" type="text/css" href="./estilo.css"/>
         
-        <style>
-            .myButton {
-	-moz-box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #5cbf2a));
-	background:-moz-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:-webkit-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
-	background-color:#44c767;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
-	background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
-	background-color:#5cbf2a;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-.visor{
-    margin: 50px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;
-    border-width: 4px;
-}            
-        </style>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body ng-controller="IndexController">
+    <body>
         <img src="./img/logo.png" id="logo"/>
-      <table border='1'>
-            <tr>
-                <td class='bold'>idEntidadBancaria</td>
-                <td class='bold'>Nombre</td>
-            </tr>
 
-            <tr ng-repeat="entidadBancaria in entidadesBancarias">
-                <td><a href="#/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
-                <td>{{entidadBancaria.nombre}}  </td>
-                <td> <a href="#/delete/{{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
-            </tr>
-
-        </table>
         <br>
-        <p>  <a href="#/insert" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a> </p>
-        <p> <a href="#/update" class="myButton">QUIERO ACTUALIZAR UNA ENTIDAD BANCARIA</a></p>
+        <a href="#/entidadbancaria" class="myButton">Entidad Bancaria</a>
         <div class="visor" ng-view>
             
             
