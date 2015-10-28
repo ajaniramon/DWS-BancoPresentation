@@ -1,19 +1,18 @@
-    <div ng-controller="IndexController">
-        <img src="./img/logo.png" id="logo"/>
-      <table border='1'>
-            <tr>
-                <td class='bold'>idEntidadBancaria</td>
-                <td class='bold'>Nombre</td>
-            </tr>
+<div ng-controller="ListController">
+    <table border='1'>
+        <tr>
+            <td class='bold'>idEntidadBancaria</td>
+            <td class='bold'>Nombre</td>
+        </tr>
 
-            <tr ng-repeat="entidadBancaria in entidadesBancarias">
-                <td><a href="#/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
-                <td>{{entidadBancaria.nombre}}  </td>
-                <td> <a href="#/delete/{{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
-            </tr>
+        <tr ng-repeat="entidadBancaria in entidadesBancarias">
+            <td><a href="#/entidadbancaria/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.idEntidadBancaria}} </a></td>
+            <td>{{entidadBancaria.nombre}}  </td>
+            <td> <a href="#/entidadbancaria/delete/{{entidadBancaria.idEntidadBancaria}}" class="myButton">BORRAR</a></td>
+        </tr>
 
-        </table>
-        <br>
-        <p>  <a href="#/insert" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a> </p>
-        <p> <a href="#/update" class="myButton">QUIERO ACTUALIZAR UNA ENTIDAD BANCARIA</a></p>
-    </div>
+    </table>
+    <br>
+    <p>  <a href="#/entidadbancaria/insert" class="myButton">QUIERO INSERTAR UNA ENTIDAD BANCARIA</a> </p>
+    <p> <a href="#/entidadbancaria/update" class="myButton">QUIERO ACTUALIZAR UNA ENTIDAD BANCARIA</a></p>
+</div>

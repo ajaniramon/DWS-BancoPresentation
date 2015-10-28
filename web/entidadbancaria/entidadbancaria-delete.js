@@ -1,6 +1,5 @@
-var app = angular.module("app",[]);
 app.controller("DeleteController",DeleteController);
-function DeleteController($scope,$http,$log){
+function DeleteController($scope,$http,$routeParams){
        function getParameterByName(name) {
         var regexS = "[\\?&]" + name + "=([^&#]*)",
                 regex = new RegExp(regexS),
@@ -14,10 +13,11 @@ function DeleteController($scope,$http,$log){
 
       $http({
     method: 'DELETE', 
-    url: '/banco_api/api/entidadBancaria/'+getParameterByName("idEntidadBancaria")
+    url: '/banco_api/api/entidadBancaria/'+ $routeParams.idEntidadBancaria
   }).success(function(data, status, headers, config) {
      $scope.mensaje = data;
   }).error(function(data, status, headers, config) {
       alert("Ha fallado la petición. Estado HTTP:"+status);
   });
 }
+DeleteController.$inject = ["$scope", "$http", "$routeParams"];
