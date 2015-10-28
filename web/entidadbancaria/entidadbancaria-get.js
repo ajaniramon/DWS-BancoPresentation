@@ -1,24 +1,10 @@
 app.controller("GetController", GetController);
-function GetController($scope, $http, $routeParams) {
+function GetController($scope, entidadBancariaService, $routeParams) {
+var response;
+response = entidadBancariaService.get($routeParams.idEntidadBancaria);
 
-    function getParameterByName(name) {
-        var regexS = "[\\?&]" + name + "=([^&#]*)",
-                regex = new RegExp(regexS),
-                results = regex.exec(window.location.search);
-        if (results == null) {
-            return "";
-        } else {
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-    }
 
-    
-
-    $http({
-        method: 'GET',
-        url: '/banco_api/api/entidadBancaria/'+ $routeParams.idEntidadBancaria
-
-    }).success(function (data, status, headers, config) {
+    response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
     }).error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
@@ -26,4 +12,4 @@ function GetController($scope, $http, $routeParams) {
     });
 
 }
-GetController.$inject = ["$scope", "$http", "$routeParams"];
+GetController.$inject = ["$scope", "entidadBancariaService", "$routeParams"];

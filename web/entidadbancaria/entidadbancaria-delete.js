@@ -1,23 +1,12 @@
 app.controller("DeleteController",DeleteController);
-function DeleteController($scope,$http,$routeParams){
-       function getParameterByName(name) {
-        var regexS = "[\\?&]" + name + "=([^&#]*)",
-                regex = new RegExp(regexS),
-                results = regex.exec(window.location.search);
-        if (results == null) {
-            return "";
-        } else {
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-    }
+function DeleteController($scope,entidadBancariaService,$routeParams){
+var response;
+response = entidadBancariaService.delete($routeParams.idEntidadBancaria);
 
-      $http({
-    method: 'DELETE', 
-    url: '/banco_api/api/entidadBancaria/'+ $routeParams.idEntidadBancaria
-  }).success(function(data, status, headers, config) {
+      response.success(function(data, status, headers, config) {
      $scope.mensaje = data;
   }).error(function(data, status, headers, config) {
       alert("Ha fallado la petición. Estado HTTP:"+status);
   });
 }
-DeleteController.$inject = ["$scope", "$http", "$routeParams"];
+DeleteController.$inject = ["$scope", "entidadBancariaService", "$routeParams"];
