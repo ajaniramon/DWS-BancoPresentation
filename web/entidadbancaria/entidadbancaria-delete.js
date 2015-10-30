@@ -4,7 +4,7 @@ var response;
 response = entidadBancariaService.delete($routeParams.idEntidadBancaria);
 
       response.success(function(data, status, headers, config) {
-     $scope.mensaje = data;
+     $scope.mensaje = "Borrado OK";
   }).error(function(data, status, headers, config) {
       alert("Ha fallado la petición. Estado HTTP:"+status);
   });

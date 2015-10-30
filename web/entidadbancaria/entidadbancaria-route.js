@@ -19,7 +19,7 @@ app.config(['$routeProvider', function ($routeProvider) {
           controller: "InsertController"
         });
         
-           $routeProvider.when('/entidadbancaria/update/', {
+           $routeProvider.when('/entidadbancaria/update/:id', {
             templateUrl: "./entidadbancaria/entidadbancaria-update.html",
           controller: "InsertController"
         });

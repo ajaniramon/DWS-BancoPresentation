@@ -1,11 +1,14 @@
 app.controller("InsertController", InsertController);
 
+
+InsertController.$inject = ["$scope", "entidadBancariaService"];
 function InsertController($scope, entidadBancariaService) {
     $scope.entidadBancaria = {};
-    var response;
-    response = entidadBancariaService.insert($scope.entidadBancaria);
+   
 
     $scope.insertar = function () {
+        response = entidadBancariaService.insert($scope.entidadBancaria);
+
         response.success(function (data, status, headers, config) {
             alert("OK");
 
@@ -16,4 +19,4 @@ function InsertController($scope, entidadBancariaService) {
         });
     };
 }
-InsertController.$inject = ["$scope", "$http", "entidadBancariaService"];
+app.controller("InsertController", InsertController);

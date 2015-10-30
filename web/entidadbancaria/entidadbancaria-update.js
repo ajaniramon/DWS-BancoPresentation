@@ -1,11 +1,13 @@
 app.controller("UpdateController", UpdateController);
 
-function UpdateController($scope,entidadBancariaService){
-    var response;
-    response = entidadBancariaService.update($scope.entidadBancaria);
-
+function UpdateController($scope,entidadBancariaService,$routeParams){
+    
+   
     $scope.entidadBancaria = {};
+     $scope.entidadBancaria.idEntidadBancaria = $routeParams.id;
+    
     $scope.actualizar=function(){
+        var response = entidadBancariaService.update($scope.entidadBancaria);
         response.success(function (data, status, headers, config) {
         alert("OK");
     }).error(function (data, status, headers, config) {
@@ -15,4 +17,4 @@ function UpdateController($scope,entidadBancariaService){
 }
     }
 
-UpdateController.$inject = ["$scope", "entidadBancariaService"];
+UpdateController.$inject = ["$scope", "entidadBancariaService","$routeParams"];
