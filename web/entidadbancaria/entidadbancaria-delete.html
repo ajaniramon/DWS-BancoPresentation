@@ -4,9 +4,32 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<div ng-controller="DeleteController">
+    <table border='1'>
+        <tr>
+            <td class='bold'>idEntidadBancaria</td>
+            <td class='bold'>Nombre</td>
+            <td class='bold'>Código Entidad</td>
+            <td class='bold'>Fecha creación</td>
+            <td class='bold'>Dirección</td>
+            <td class='bold'>CIF</td>
+        </tr>
 
-    
-    <div ng-controller="DeleteController">
+        <tr>
+            <td>{{entidadBancaria.idEntidadBancaria}}</td>
+            <td>{{entidadBancaria.nombre}}  </td>
+            <td>{{entidadBancaria.codigoEntidad}}  </td>
+            <td>{{entidadBancaria.fechaCreacion}}  </td>
+            <td>{{entidadBancaria.direccion}}  </td>
+            <td>{{entidadBancaria.cif}}</td>
+        </tr>
+
+    </table>
+    <p> ¿Estás seguro de borrar esta entidad? </p>
+    <p><input  ng-click="delete()" type="submit" value="BORRAR" class="myButton"/>
+        <a href="#/" class="myButton">CANCELAR</a></p>
+    <div>
         <div><h1>{{mensaje}}</h1><a href="#/" class="myButton">VOLVER</a></div>
         
     </div>
+</div>
