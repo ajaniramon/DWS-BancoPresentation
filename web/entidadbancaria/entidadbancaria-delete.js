@@ -1,12 +1,11 @@
 DeleteController.$inject = ["$scope", "entidadBancariaService", "$routeParams"];
 function DeleteController($scope, entidadBancariaService, $routeParams) {
 
-     entidadBancariaService.get($routeParams.idEntidadBancaria).success(function (data, status, headers, config) {
+    entidadBancariaService.get($routeParams.idEntidadBancaria).success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
     }).error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
     });
-
 
     $scope.delete = function () {
         var response;
