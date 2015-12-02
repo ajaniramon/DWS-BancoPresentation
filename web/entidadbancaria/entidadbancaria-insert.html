@@ -10,6 +10,9 @@
             <input  ng-click="insertar()" type="submit" value="Insertar"/><br>
             <br>
             <a href="#/" class="myButton">VOLVER</a>
+            <ul>
+                <li ng-repeat="error in errores">{{error.fieldName}} : {{error.message}}</li>
+            </ul>
             </form>
         </div>
 

@@ -13,9 +13,12 @@ function InsertController($scope, entidadBancariaService) {
             alert("OK");
 
         }).error(function (data, status, headers, config) {
-
-            alert("Ha fallado la petición. Estado HTTP:" + status);
-            console.log(data);
+                if(status === 400){
+                    $scope.errores = data;
+                }else{
+                    alert("Ha fallado la petición HTTP. Estado HTTP: "+status);
+                }
+            
         });
     };
 }
