@@ -1,5 +1,3 @@
-app.controller("InsertController", InsertController);
-
 
 InsertController.$inject = ["$scope", "entidadBancariaService"];
 function InsertController($scope, entidadBancariaService) {
@@ -17,6 +15,7 @@ function InsertController($scope, entidadBancariaService) {
                     $scope.errores = data;
                 }else{
                     alert("Ha fallado la petición HTTP. Estado HTTP: "+status);
+                    
                 }
             
         });
